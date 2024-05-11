@@ -7,8 +7,10 @@ import android.content.Context;
 import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Shader;
-import android.support.v7.widget.AppCompatTextView;
+
 import android.util.AttributeSet;
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 /**
  * 如何创建自定义 View：https://developer.android.google.cn/guide/topics/ui/custom-components

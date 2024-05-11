@@ -1,10 +1,12 @@
 package com.example.chapter3.homework;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.airbnb.lottie.LottieAnimationView;
 
