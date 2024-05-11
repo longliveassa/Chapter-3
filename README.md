@@ -8,6 +8,12 @@
 ![QQ录屏20240511183726](https://github.com/longliveassa/Chapter-3/assets/117608033/544bfa8e-1f55-4e80-8e55-42e970dedc70)
 
 更改：
+ implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'com.airbnb.android:lottie:3.4.0'
+
+
+
 import androidx.appcompat.app.AppCompatActivity;
 
 Ch3Ex3Activity.java:
