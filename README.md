@@ -10,24 +10,27 @@
 更改：
 
 build.gradle：
+
  implementation 'androidx.viewpager2:viewpager2:1.0.0'
  implementation 'com.google.android.material:material:1.4.0'
  implementation 'com.airbnb.android:lottie:3.4.0'
  
 gradle.properties：
+
 android.useAndroidX=true
 android.enableJetifier=true
 
 Ch3Ex3Activity.java:
 
-//        获取视图的id以便操作
+
         ViewPager viewPager = findViewById(R.id.view_pager);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
 
-//        adapter 数据容器绑定器
+
         MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+        
 3.xml:
 
     <com.google.android.material.appbar.AppBarLayout
