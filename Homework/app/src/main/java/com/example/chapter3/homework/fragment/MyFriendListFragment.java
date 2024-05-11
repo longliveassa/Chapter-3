@@ -30,7 +30,7 @@ public class MyFriendListFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static Fragment newInstance() {
+    public static MyFriendListFragment newInstance() {
         return new MyFriendListFragment();
     }
     /**
