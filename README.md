@@ -31,7 +31,7 @@ Ch3Ex3Activity.java:
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
         
-3.xml:
+xml:
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -52,7 +52,9 @@ Ch3Ex3Activity.java:
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-新建MyPagerAdapter.java:
+新建：
+
+MyPagerAdapter.java:
 
 public class MyPagerAdapter extends FragmentPagerAdapter {
 
@@ -94,7 +96,7 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
     }
 }
 
-新建FriendListFragment.java:
+FriendListFragment.java:
 
 public class FriendListFragment extends Fragment {
 
@@ -207,6 +209,6 @@ xml:
 </FrameLayout>
 
 
-新建 MyFriendListFragment.java:略
+MyFriendListFragment.java:略
 
 xml:略
