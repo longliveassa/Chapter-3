@@ -44,6 +44,7 @@ public class Ch3Ex2Activity extends AppCompatActivity {
                 picker.setColor(getBackgroundColor(startColorPicker));
                 picker.enableAutoClose();
                 picker.setCallback(new ColorPickerCallback() {
+//                    picker结束后的回调，设置要干啥
                     @Override
                     public void onColorChosen(int color) {
                         onStartColorChanged(color);
@@ -128,23 +129,41 @@ public class Ch3Ex2Activity extends AppCompatActivity {
             animatorSet.cancel();
         }
 
+   // 创建 PropertyValuesHolder 对象，分别用于 scaleX 和 scaleY 动画
+//PropertyValuesHolder pvhScaleX = PropertyValuesHolder.ofFloat("scaleX", 1f, 2f);
+//PropertyValuesHolder pvhScaleY = PropertyValuesHolder.ofFloat("scaleY", 1f, 2f);
+//
+//// 创建单个 ObjectAnimator 使用两个 PropertyValuesHolders
+
+
         // 在这里实现了一个 ObjectAnimator，对 target 控件的背景色进行修改
         // 可以思考下，这里为什么要使用 ofArgb，而不是 ofInt 呢？
         ObjectAnimator animator1 = ObjectAnimator.ofArgb(target,
                 "backgroundColor",
                 getBackgroundColor(startColorPicker),
                 getBackgroundColor(endColorPicker));
-        animator1.setDuration(Integer.parseInt(durationSelector.getText().toString()));
-        animator1.setRepeatCount(ObjectAnimator.INFINITE);
-        animator1.setRepeatMode(ObjectAnimator.REVERSE);
 
-        // TODO ex2-1：在这里实现另一个 ObjectAnimator，对 target 控件的大小进行缩放，从 1 到 2 循环
+        // TODO ex2-1：实现另一个 ObjectAnimator，对 target 控件的大小进行缩放，从 1 到 2 循环
+        ObjectAnimator animatorX = ObjectAnimator.ofFloat(target, "scaleX",1f, 2f);
+        ObjectAnimator animatorY = ObjectAnimator.ofFloat(target, "scaleY",1f, 2f);
+// TODO ex2-2：实现另一个 ObjectAnimator，对 target 控件的透明度进行修改，从 1 到 0.5f 循环
+        ObjectAnimator animator2 = ObjectAnimator.ofFloat(target, "alpha", 1f, 0.5f);
 
-        // TODO ex2-2：在这里实现另一个 ObjectAnimator，对 target 控件的透明度进行修改，从 1 到 0.5f 循环
-
-        // TODO ex2-3: 将上面创建的其他 ObjectAnimator 都添加到 AnimatorSet 中
+//        配置
+        configureAnimator(animatorX);
+        configureAnimator(animatorY);
+        configureAnimator(animator1);
+        configureAnimator(animator2);
+// TODO ex2-3: 将上面创建的其他 ObjectAnimator 都添加到 AnimatorSet 中
         animatorSet = new AnimatorSet();
-        animatorSet.playTogether(animator1);
+//        animatorSet.playTogether(animator1);
+        animatorSet.playTogether(animator1, animator2, animatorX,animatorY);
         animatorSet.start();
+    }
+    private void configureAnimator(ObjectAnimator animator) {
+//        配置动画效果：INFINITE 并且 REVERSE，间隔时间为durationSelector的数
+        animator.setDuration(Integer.parseInt(durationSelector.getText().toString()));
+        animator.setRepeatCount(android.animation.ValueAnimator.INFINITE);
+        animator.setRepeatMode(android.animation.ValueAnimator.REVERSE);
     }
 }
