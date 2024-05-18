@@ -1,27 +1,27 @@
 # Chapter-3
-新加文件：
+### 新加文件：
 
 ![image](https://github.com/longliveassa/Chapter-3/assets/117608033/9f3b1668-07b2-4b26-bc37-e8291ed10f60)
 
-作业一实现效果：
+### 作业一实现效果：
 
 ![QQ录屏20240511183726](https://github.com/longliveassa/Chapter-3/assets/117608033/544bfa8e-1f55-4e80-8e55-42e970dedc70)
 
-更改：
+### 更改：
 
 build.gradle：
-
+```
  implementation 'androidx.viewpager2:viewpager2:1.0.0'
  implementation 'com.google.android.material:material:1.4.0'
  implementation 'com.airbnb.android:lottie:3.4.0'
- 
+ ```
 gradle.properties：
-
+```
 android.useAndroidX=true
 android.enableJetifier=true
-
+```
 Ch3Ex3Activity.java:
-
+```
 
         ViewPager viewPager = findViewById(R.id.view_pager);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
@@ -30,9 +30,9 @@ Ch3Ex3Activity.java:
         MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
-        
+```        
 xml:
-
+```
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -51,11 +51,11 @@ xml:
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-新建：
+```
+### 新建：
 
 MyPagerAdapter.java:
-
+```
 public class MyPagerAdapter extends FragmentPagerAdapter {
 
     public MyPagerAdapter(@NonNull FragmentManager fm) {
@@ -95,9 +95,9 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
 
     }
 }
-
+```
 FriendListFragment.java:
-
+```
 public class FriendListFragment extends Fragment {
 
     private LottieAnimationView animationView;
@@ -179,9 +179,9 @@ public class FriendListFragment extends Fragment {
         fadeInAnimator.start();
     }
 }
-
+```
 xml:
-
+```
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -208,7 +208,7 @@ xml:
 
 </FrameLayout>
 
-
+```
 MyFriendListFragment.java:略
 
 xml:略
